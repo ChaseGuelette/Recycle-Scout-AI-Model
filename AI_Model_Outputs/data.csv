@@ -1,4 +1,4 @@
-name,transportationIndex,percentUrbanized,GDPPerCapita,propertyCost,CCI,orignialPercentOfTotalTrashRecycled,percentOfTotalTrashRecycled,percentRecycledIncrease,totalTrash,amountInvested,recycleBenefit
-United States of America,3.9,83.0,1000000.0,30000.0,5432.0,0.3,1.0,0.7,0.6,1000000.0,0.42
-Canada,3.7,90.0,500000.0,20000.0,4452.0,0.4,1.0,0.6,0.6,1000000.0,0.36
-Mexico,2.0,30.0,50.0,10000.0,8000.0,0.1,1.0,0.9,0.2,1000000.0,0.18000000000000002
+Country Name,Transportation Index,Percent Urbanized,GDP Per Capita,Property Cost,Construction Cost Index,Orignial Percent Of  Total Trash Recycled,Percent Of Total Trash Recycled,Percent Recycled Increase,Total Trash,Amount Invested,Recycle Benefit
+United States of America,3.9,83,1000000,30000,5432,0.3,1,0.7,0.6,1000000,0.42
+Canada,3.7,90,500000,20000,4452,0.4,1,0.6,0.6,1000000,0.36
+Mexico,2,30,50,10000,8000,0.1,1,0.9,0.2,1000000,0.18000000000000002

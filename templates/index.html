@@ -47,7 +47,7 @@
         form label {
             font-size: 1.2em;
             margin-bottom: 10px;
-            color: #ffffff
+            color: #ffffff;
         }
         form button {
             color: #000000; /* White text color for the button */
@@ -74,12 +74,21 @@
     <div class="map-container">
         {{ map_html|safe }}
     </div>
-    <form method="POST" action="/submit">
+    <form method="POST" action="/">
         <label for="user_selection">Choose Data to Display:</label>
         <select id="user_selection" name="user_selection" required>
-            <option value="Option 1">Option 1</option>
-            <option value="Option 2">Option 2</option>
-            <option value="Option 3">Option 3</option>
+            <option value="Carbon" {% if user_selection == 'Carbon' %}selected{% endif %}>Carbon</option>
+            <option value="Transportation Index" {% if user_selection == 'Transportation Index' %}selected{% endif %}>Transportation Index</option>
+            <option value="Percent Urbanized" {% if user_selection == 'Percent Urbanized' %}selected{% endif %}>Percent Urbanized</option>
+            <option value="GDP Per Capita" {% if user_selection == 'GDP Per Capita' %}selected{% endif %}>GDP Per Capita</option>
+            <option value="Property Cost" {% if user_selection == 'Property Cost' %}selected{% endif %}>Property Cost</option>
+            <option value="Construction Cost Index" {% if user_selection == 'Construction Cost Index' %}selected{% endif %}>Construction Cost Index</option>
+            <option value="Original Percent Of Total Trash Recycled" {% if user_selection == 'Original Percent Of Total Trash Recycled' %}selected{% endif %}>Original Percent Of Total Trash Recycled</option>
+            <option value="Percent Of Total Trash Recycled" {% if user_selection == 'Percent Of Total Trash Recycled' %}selected{% endif %}>Percent Of Total Trash Recycled</option>
+            <option value="Percent Recycled Increase" {% if user_selection == 'Percent Recycled Increase' %}selected{% endif %}>Percent Recycled Increase</option>
+            <option value="Total Trash" {% if user_selection == 'Total Trash' %}selected{% endif %}>Total Trash</option>
+            <option value="Amount Invested" {% if user_selection == 'Amount Invested' %}selected{% endif %}>Amount Invested</option>
+            <option value="Recycle Benefit" {% if user_selection == 'Recycle Benefit' %}selected{% endif %}>Recycle Benefit</option>
         </select>
         <button type="submit">Display Map</button>
     </form>
