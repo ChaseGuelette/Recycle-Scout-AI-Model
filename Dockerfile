@@ -1,5 +1,5 @@
 # Set base image (host os)
-FROM python:3.12-alpine
+FROM python:3.12-slim
 
 # By default, listen on port seee
 EXPOSE 5000/tcp
@@ -8,10 +8,10 @@ EXPOSE 5000/tcp
 WORKDIR /app
 
 # Copy the dependencies file to the working directory
-COPY requirements.txt .
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install any dependencies
-RUN pip install -r requirements.txt
+# Copy the entire content of the local project directory to the working directory
+COPY . .
 
-# Copy the content of the local src directory to the working directory
-COPY app.py .
+CMD ["flask", "run", "--host=0.0.0.0"]

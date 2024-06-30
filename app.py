@@ -3,7 +3,8 @@ import folium
 import pandas as pd
 import os
 
-os.system('python AI_Model_Outputs/generate.py')
+
+#os.system('python generate.py')
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def display_map():
         user_selection = request.form.get("user_selection")
     
     # Load data and create map
-    eco_footprints = pd.read_csv("AI_Model_Outputs/data.csv")
+    eco_footprints = pd.read_csv("test/data.csv")
     max_eco_footprint = eco_footprints[user_selection].max()
     political_countries_url = (
         "http://geojson.xyz/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson"
