@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folium Map</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            background: url("{{ url_for('static', filename='background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .title-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .title-section img {
+            max-width: 800px;
+            margin-bottom: 10px;
+        }
+        .map-container {
+            width: 60%;
+            height: 50vh; /* Change this to vh to make it responsive */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form select {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        form label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #ffffff
+        }
+        form button {
+            color: #000000; /* White text color for the button */
+            background-color: #ffffff; /* Red background color for the button */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #1cd547; /* Darker red on hover */
+        }
+        .title-section h2 {
+            color: #ffffff; /* Blue color for the title text */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title-section">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        <h2>The AI Solution to Recycling Sustainability</h2>
+    </div>
+    <div class="map-container">
+        {{ map_html|safe }}
+    </div>
+    <form method="POST" action="/submit">
+        <label for="user_selection">Choose Data to Display:</label>
+        <select id="user_selection" name="user_selection" required>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+        </select>
+        <button type="submit">Display Map</button>
+    </form>
+</body>
+</html>
