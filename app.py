@@ -2,13 +2,15 @@ from flask import Flask, render_template, request
 import folium
 import pandas as pd
 
+os.system('AI_Model_Outputs/generate.py')
+
 app = Flask(__name__)
 
 # Route for displaying the map
 @app.route("/", methods=["GET"])
 def display_map():
     # Load data and create map
-    eco_footprints = pd.read_csv("footprint.csv")
+    eco_footprints = pd.read_csv("AI_Model_Outputs/footprint.csv")
     max_eco_footprint = eco_footprints["Carbon"].max()
     political_countries_url = (
         "http://geojson.xyz/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson"
